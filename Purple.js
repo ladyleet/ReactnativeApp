@@ -1,25 +1,47 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { Button } from 'react-native';
+import styled from 'styled-components';
 
 export default class Purple extends React.Component {
   render() {
     return (
-      <View style = {styles.container}>
+      <PurpleView>
         <Button
-          title="Take Me Home"
+          title="🦄 🦄 🦄 🦄 🦄 🦄 🦄 🦄 🦄 🦄"
           onPress={() => this.props.navigation.navigate('Home')}
         />
-        <Text>This is Unicorn Purple</Text>
-      </View>
+        <TextCenter>💜 🍇 👾 💜 🍇 👾 💜 🍇 👾 💜 🍇</TextCenter>
+        <TextCenter>💜 🍇 👾 💜 🍇 👾 💜 🍇 👾 💜 🍇</TextCenter>
+        <TextCenter>💜 🍇 👾 💜 🍇 👾 💜 🍇 👾 💜 🍇</TextCenter>
+        <TextCenter>💜 🍇 👾 💜 🍇 👾 💜 🍇 👾 💜 🍇</TextCenter>
+        <TextCenter>💜 🍇 👾 💜 🍇 👾 💜 🍇 👾 💜 🍇</TextCenter>
+        <TextCenter>💜 🍇 👾 💜 🍇 👾 💜 🍇 👾 💜 🍇</TextCenter>
+        <TextCenter>💜 🍇 👾 💜 🍇 👾 💜 🍇 👾 💜 🍇</TextCenter>
+        <TextCenter>💜 🍇 👾 💜 🍇 👾 💜 🍇 👾 💜 🍇</TextCenter>
+        <TextCenter>💜 🍇 👾 💜 🍇 👾 💜 🍇 👾 💜 🍇</TextCenter>
+        <TextCenter>💜 🍇 👾 💜 🍇 👾 💜 🍇 👾 💜 🍇</TextCenter>
+        <TextCenter>You Made It To The End Of The Rainbow</TextCenter>
+        <TextCenter>💜 🍇 👾 💜 🍇 👾 💜 🍇 👾 💜 🍇</TextCenter>
+        <TextCenter>💜 🍇 👾 💜 🍇 👾 💜 🍇 👾 💜 🍇</TextCenter>
+        <TextCenter>💜 🍇 👾 💜 🍇 👾 💜 🍇 👾 💜 🍇</TextCenter>
+        <TextCenter>💜 🍇 👾 💜 🍇 👾 💜 🍇 👾 💜 🍇</TextCenter>
+        <TextCenter>💜 🍇 👾 💜 🍇 👾 💜 🍇 👾 💜 🍇</TextCenter>
+        <TextCenter>💜 🍇 👾 💜 🍇 👾 💜 🍇 👾 💜 🍇</TextCenter>
+        <TextCenter>💜 🍇 👾 💜 🍇 👾 💜 🍇 👾 💜 🍇</TextCenter>
+        <TextCenter>💜 🍇 👾 💜 🍇 👾 💜 🍇 👾 💜 🍇</TextCenter>
+        <TextCenter>💜 🍇 👾 💜 🍇 👾 💜 🍇 👾 💜 🍇</TextCenter>
+        <TextCenter>💜 🍇 👾 💜 🍇 👾 💜 🍇 👾 💜 🍇</TextCenter>
+      </PurpleView>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#e1bfff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  }
-});
+const PurpleView = styled.View`
+  background: #e1bfff;
+  flex: 1;
+  justify-content: center;
+`;
+
+const TextCenter = styled.Text`
+  text-align: center;
+`;

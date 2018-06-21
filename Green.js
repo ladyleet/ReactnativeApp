@@ -7,14 +7,33 @@ export default class Green extends React.Component {
     return (
       <GreenView>
         <Button
-          title="Home"
+          title="🦄 🦄 🦄 🦄 🦄 🦄 🦄 🦄 🦄 🦄"
           onPress={() => this.props.navigation.navigate('Home')}
         />
-        <Text>This is 🦄 Green</Text>
+        <TextCenter>💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️</TextCenter>
+        <TextCenter>💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️</TextCenter>
+        <TextCenter>💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️</TextCenter>
+        <TextCenter>💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️</TextCenter>
+        <TextCenter>💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️</TextCenter>
+        <TextCenter>💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️</TextCenter>
+        <TextCenter>💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️</TextCenter>
+        <TextCenter>💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️</TextCenter>
+        <TextCenter>💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️</TextCenter>
+        <TextCenter>💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️</TextCenter>
         <Button 
-          title="Blue"
-          onPress={() => this.props.navigation.navigate('Blue')}
+        title="💙 🦋 🐳 💙 🦋 🐳 💙 🦋 🐳 💙"
+        onPress={() => this.props.navigation.navigate('Blue')}
         />
+        <TextCenter>💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️</TextCenter>
+        <TextCenter>💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️</TextCenter>
+        <TextCenter>💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️</TextCenter>
+        <TextCenter>💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️</TextCenter>
+        <TextCenter>💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️</TextCenter>
+        <TextCenter>💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️</TextCenter>
+        <TextCenter>💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️</TextCenter>
+        <TextCenter>💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️</TextCenter>
+        <TextCenter>💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️</TextCenter>
+        <TextCenter>💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️</TextCenter>
       </GreenView>
     );
   }
@@ -23,6 +42,7 @@ export default class Green extends React.Component {
 const GreenView = styled.View`
   background: #c0ffb6;
   flex: 1;
+  justify-content: center;
 `;
 
 const TextCenter = styled.Text`

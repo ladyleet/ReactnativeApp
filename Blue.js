@@ -1,29 +1,50 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { Button } from 'react-native';
+import styled from 'styled-components';
 
 export default class Blue extends React.Component {
   render() {
     return (
-      <View style = {styles.container}>
+      <BlueView>
         <Button
-          title="Take Me Home"
+          title="🦄 🦄 🦄 🦄 🦄 🦄 🦄 🦄 🦄 🦄"
           onPress={() => this.props.navigation.navigate('Home')}
         />
-        <Text>This is Unicorn Blue</Text>
+        <TextCenter>💙 🦋 🐳 💙 🦋 🐳 💙 🦋 🐳 💙 🦋</TextCenter>
+        <TextCenter>💙 🦋 🐳 💙 🦋 🐳 💙 🦋 🐳 💙 🦋</TextCenter>
+        <TextCenter>💙 🦋 🐳 💙 🦋 🐳 💙 🦋 🐳 💙 🦋</TextCenter>
+        <TextCenter>💙 🦋 🐳 💙 🦋 🐳 💙 🦋 🐳 💙 🦋</TextCenter>
+        <TextCenter>💙 🦋 🐳 💙 🦋 🐳 💙 🦋 🐳 💙 🦋</TextCenter>
+        <TextCenter>💙 🦋 🐳 💙 🦋 🐳 💙 🦋 🐳 💙 🦋</TextCenter>
+        <TextCenter>💙 🦋 🐳 💙 🦋 🐳 💙 🦋 🐳 💙 🦋</TextCenter>
+        <TextCenter>💙 🦋 🐳 💙 🦋 🐳 💙 🦋 🐳 💙 🦋</TextCenter>
+        <TextCenter>💙 🦋 🐳 💙 🦋 🐳 💙 🦋 🐳 💙 🦋</TextCenter>
+        <TextCenter>💙 🦋 🐳 💙 🦋 🐳 💙 🦋 🐳 💙 🦋</TextCenter>
         <Button 
-          title="Purple"
-          onPress={() => this.props.navigation.navigate('Purple')}
+        title="💜 🍇 👾 💜 🍇 👾 💜 🍇 👾 💜"
+        onPress={() => this.props.navigation.navigate('Purple')}
         />
-      </View>
+        <TextCenter>💙 🦋 🐳 💙 🦋 🐳 💙 🦋 🐳 💙 🦋</TextCenter>
+        <TextCenter>💙 🦋 🐳 💙 🦋 🐳 💙 🦋 🐳 💙 🦋</TextCenter>
+        <TextCenter>💙 🦋 🐳 💙 🦋 🐳 💙 🦋 🐳 💙 🦋</TextCenter>
+        <TextCenter>💙 🦋 🐳 💙 🦋 🐳 💙 🦋 🐳 💙 🦋</TextCenter>
+        <TextCenter>💙 🦋 🐳 💙 🦋 🐳 💙 🦋 🐳 💙 🦋</TextCenter>
+        <TextCenter>💙 🦋 🐳 💙 🦋 🐳 💙 🦋 🐳 💙 🦋</TextCenter>
+        <TextCenter>💙 🦋 🐳 💙 🦋 🐳 💙 🦋 🐳 💙 🦋</TextCenter>
+        <TextCenter>💙 🦋 🐳 💙 🦋 🐳 💙 🦋 🐳 💙 🦋</TextCenter>
+        <TextCenter>💙 🦋 🐳 💙 🦋 🐳 💙 🦋 🐳 💙 🦋</TextCenter>
+        <TextCenter>💙 🦋 🐳 💙 🦋 🐳 💙 🦋 🐳 💙 🦋</TextCenter>
+      </BlueView>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#d0ddff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  }
-});
+const BlueView = styled.View`
+  background: #d0ddff;
+  flex: 1;
+  justify-content: center;
+`;
+
+const TextCenter = styled.Text`
+  text-align: center;
+`;
