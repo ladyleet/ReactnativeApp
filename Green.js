@@ -1,29 +1,30 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
+import styled from 'styled-components';
 
 export default class Green extends React.Component {
   render() {
     return (
-      <View style = {styles.container}>
+      <GreenView>
         <Button
-          title="Take Me Home"
+          title="Home"
           onPress={() => this.props.navigation.navigate('Home')}
         />
-        <Text>This is Unicorn Green</Text>
+        <Text>This is 🦄 Green</Text>
         <Button 
           title="Blue"
           onPress={() => this.props.navigation.navigate('Blue')}
         />
-      </View>
+      </GreenView>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#c0ffb6',
-    alignItems: 'center',
-    justifyContent: 'center',
-  }
-});
+const GreenView = styled.View`
+  background: #c0ffb6;
+  flex: 1;
+`;
+
+const TextCenter = styled.Text`
+  text-align: center;
+`;
