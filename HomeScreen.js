@@ -1,8 +1,14 @@
 import React from 'react';
 import { Button } from 'react-native';
 import styled from 'styled-components';
+import { fromEvent } from 'rxjs';
+import { stream } from './utils/stream';
+import donut from './donut.png';
 
 export default class HomeScreen extends React.Component {
+  
+  touchDown$ = fromEvent(document, '')
+  
   render() {
     return (
       <HomeView>
