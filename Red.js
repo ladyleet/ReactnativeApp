@@ -7,7 +7,7 @@ export default class Red extends React.Component {
     return (
       <RedView>
         <Button
-          title="🦄 🦄 🦄"
+          title="🦄 🦄 🦄 🦄 🦄 🦄 🦄 🦄 🦄 🦄"
           onPress={() => this.props.navigation.navigate('Home')}
         />
         <TextCenter>❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹</TextCenter>
@@ -20,14 +20,10 @@ export default class Red extends React.Component {
         <TextCenter>❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹</TextCenter>
         <TextCenter>❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹</TextCenter>
         <TextCenter>❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹</TextCenter>
-        <Text>
-          ❤️ 🌹 🌶 ❤️ 
-          <Button 
-          title="💛 🌼 ⭐"
+        <Button 
+          title="💛 🌼 ⭐ 💛 🌼 ⭐ 💛 🌼 ⭐ 💛"
           onPress={() => this.props.navigation.navigate('Yellow')}
-          />
-          🌹 🌶 ❤️ 🌹
-        </Text>
+        />
         <TextCenter>❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹</TextCenter>
         <TextCenter>❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹</TextCenter>
         <TextCenter>❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹</TextCenter>
@@ -46,6 +42,7 @@ export default class Red extends React.Component {
 const RedView = styled.View`
   background: #ffd6d6;
   flex: 1;
+  justify-content: center;
 `;
 
 const TextCenter = styled.Text`

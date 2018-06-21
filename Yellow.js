@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Text } from 'react-native';
+import { Button } from 'react-native';
 import styled from 'styled-components';
 
 export default class Yellow extends React.Component {
@@ -7,7 +7,7 @@ export default class Yellow extends React.Component {
     return (
       <YellowView>
         <Button
-          title="🦄 🦄 🦄"
+          title="🦄 🦄 🦄 🦄 🦄 🦄 🦄 🦄 🦄 🦄"
           onPress={() => this.props.navigation.navigate('Home')}
         />
         <TextCenter>💛 🌼 ⭐ 💛 🌼 ⭐ 💛 🌼 ⭐ 💛 🌼</TextCenter>
@@ -19,14 +19,11 @@ export default class Yellow extends React.Component {
         <TextCenter>💛 🌼 ⭐ 💛 🌼 ⭐ 💛 🌼 ⭐ 💛 🌼</TextCenter>
         <TextCenter>💛 🌼 ⭐ 💛 🌼 ⭐ 💛 🌼 ⭐ 💛 🌼</TextCenter>
         <TextCenter>💛 🌼 ⭐ 💛 🌼 ⭐ 💛 🌼 ⭐ 💛 🌼</TextCenter>
-        <Text>
-          💛 🌼 ⭐ 💛 
-          <Button 
-          title="💚 ☘️ 🍏"
-          onPress={() => this.props.navigation.navigate('Green')}
-          />
-          🌼 ⭐ 💛 🌼
-        </Text>
+        <TextCenter>💛 🌼 ⭐ 💛 🌼 ⭐ 💛 🌼 ⭐ 💛 🌼</TextCenter>
+        <Button 
+        title="💚 ☘️ 🍏 💚 ☘️ 🍏 💚 ☘️ 🍏 💚"
+        onPress={() => this.props.navigation.navigate('Green')}
+        />
         <TextCenter>💛 🌼 ⭐ 💛 🌼 ⭐ 💛 🌼 ⭐ 💛 🌼</TextCenter>
         <TextCenter>💛 🌼 ⭐ 💛 🌼 ⭐ 💛 🌼 ⭐ 💛 🌼</TextCenter>
         <TextCenter>💛 🌼 ⭐ 💛 🌼 ⭐ 💛 🌼 ⭐ 💛 🌼</TextCenter>
@@ -45,12 +42,9 @@ export default class Yellow extends React.Component {
 const YellowView = styled.View`
   background: #faffb0;
   flex: 1;
+  justify-content: center;
 `;
 
 const TextCenter = styled.Text`
   text-align: center;
 `;
-
-{/* <TextCenter>💚 ☘️ 🍏</TextCenter>
-        <TextCenter>💙 🦋 🐳</TextCenter>
-        <TextCenter>💜 🍇 👾</TextCenter> */}
