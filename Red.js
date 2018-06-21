@@ -1,29 +1,53 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { Button, Text } from 'react-native';
+import styled from 'styled-components';
 
 export default class Red extends React.Component {
   render() {
     return (
-      <View style = {styles.container}>
+      <RedView>
         <Button
-          title="Take Me Home"
+          title="🦄 🦄 🦄"
           onPress={() => this.props.navigation.navigate('Home')}
         />
-        <Text>This is Unicorn Red</Text>
-        <Button 
-          title="Yellow"
+        <TextCenter>❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹</TextCenter>
+        <TextCenter>❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹</TextCenter>
+        <TextCenter>❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹</TextCenter>
+        <TextCenter>❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹</TextCenter>
+        <TextCenter>❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹</TextCenter>
+        <TextCenter>❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹</TextCenter>
+        <TextCenter>❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹</TextCenter>
+        <TextCenter>❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹</TextCenter>
+        <TextCenter>❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹</TextCenter>
+        <TextCenter>❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹</TextCenter>
+        <Text>
+          ❤️ 🌹 🌶 ❤️ 
+          <Button 
+          title="💛 🌼 ⭐"
           onPress={() => this.props.navigation.navigate('Yellow')}
-        />
-      </View>
+          />
+          🌹 🌶 ❤️ 🌹
+        </Text>
+        <TextCenter>❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹</TextCenter>
+        <TextCenter>❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹</TextCenter>
+        <TextCenter>❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹</TextCenter>
+        <TextCenter>❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹</TextCenter>
+        <TextCenter>❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹</TextCenter>
+        <TextCenter>❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹</TextCenter>
+        <TextCenter>❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹</TextCenter>
+        <TextCenter>❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹</TextCenter>
+        <TextCenter>❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹</TextCenter>
+        <TextCenter>❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹 🌶 ❤️ 🌹</TextCenter>
+      </RedView>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#ffd6d6',
-    alignItems: 'center',
-    justifyContent: 'center',
-  }
-});
+const RedView = styled.View`
+  background: #ffd6d6;
+  flex: 1;
+`;
+
+const TextCenter = styled.Text`
+  text-align: center;
+`
