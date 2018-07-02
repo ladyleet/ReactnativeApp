@@ -5,8 +5,12 @@ import { Subject } from 'rxjs';
 import { exhaustMap, map, takeUntil } from 'rxjs/operators';
 import { stream } from './utils/stream';
 import donut from './donut.png';
+import kenwheeler from './ken_wheeler.png';
 import { webSocket } from 'rxjs/webSocket';
 import { Subscription } from 'rxjs';
+
+const sourceImages = [kenwheeler, donut];
+let images = null;
 
 /* <Button 
           title="👀 🦄 🌈 (👆 me)"
@@ -23,9 +27,9 @@ export default class HomeScreen extends React.Component {
   _touchMove = new Subject();
   _touchEnd = new Subject();
 
-  _socket = webSocket('ws://websocket-server-bro.herokuapp.com:8080');
+  _socket = webSocket('ws://localhost:8080');
 
-  state = { locationX: 0, locationY: 0, pageX: 0, pageY: 0, positions: [] };
+  state = { locationX: 0, locationY: 0, pageX: 0, pageY: 0, randomDonuts: [] };
   
   _subscription = new Subscription();
 
@@ -54,11 +58,14 @@ export default class HomeScreen extends React.Component {
       })
     }));
 
-    this._subscription.add(this._socket.subscribe(positions => {
+    this._subscription.add(this._socket.subscribe(randomDonuts => {
+      if (!images) {
+        images = randomDonuts.map(() => sourceImages[Math.floor(Math.random() * sourceImages.length)]);
+      }
       this.setState({
-        positions
+        randomDonuts
       })
-    }))
+    }));
   }
 
   componentWillUnmount() {
@@ -69,14 +76,23 @@ export default class HomeScreen extends React.Component {
     let donutX = 0;
     let donutY = 0;
 
-    const { pageX, pageY, locationX, locationY } = this.state;
+    const { pageX, pageY, locationX, locationY, randomDonutX, randomDonutY } = this.state;
 
     donutX = pageX - locationX;
     donutY = pageY - locationY - 80;
 
     return (
       <HomeView>
-        <Text>{ JSON.stringify({ pageX, pageY, locationX, locationY }) }</Text>
+        {/* <Text>{ JSON.stringify({ pageX, pageY, locationX, locationY, randomDonutX, randomDonutY }) }</Text> */}
+        {this.state.randomDonuts.map((randomDonut, i) => <Image 
+          key={i}
+          source={images[i]}
+          style={{
+            position: 'absolute',
+            left: randomDonut.x,
+            top: randomDonut.y,
+          }}>
+        </Image>)}
         <Image
           onMoveShouldSetResponder={() => this._onMoveShouldSetResponder() } 
           onMoveShouldSetResponderCapture={() => this._onMoveShouldSetResponderCapture() }   
@@ -90,21 +106,12 @@ export default class HomeScreen extends React.Component {
             top: donutY,
           }} source={donut}>
         </Image>
-        {this.state.positions.map(p => (<Image source={donut}
-          style={{
-            opacity: 0.8,
-            position: 'absolute',
-            left: p.x,
-            top: p.y,
-          }}>
-        </Image>))}
       </HomeView>
     );
   }
 }
 
 const HomeView = styled.View`
-  background: #FBAED2;
   flex: 1;
   justify-content: center;
 `;
