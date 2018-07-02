@@ -7,7 +7,7 @@ export default class Purple extends React.Component {
     return (
       <PurpleView>
         <Button
-          title="🦄 🦄 🦄 🦄 🦄 🦄 🦄 🦄 🦄 🦄"
+          title="🦄 🦄 🦄 🦄 home 🦄 🦄 🦄 🦄"
           onPress={() => this.props.navigation.navigate('Home')}
         />
         <TextCenter>💜 🍇 👾 💜 🍇 👾 💜 🍇 👾 💜 🍇</TextCenter>
