@@ -1,9 +1,8 @@
 import React from 'react';
 import { Button, Text, Image } from 'react-native';
 import styled from 'styled-components';
-import { Subject } from 'rxjs';
-import { exhaustMap, map, takeUntil } from 'rxjs/operators';
-import { stream } from './utils/stream';
+import { Subject, timer } from 'rxjs';
+import { exhaustMap, map, takeUntil, groupBy, mergeMap, finalize, single  } from 'rxjs/operators';
 import donut from './donut.png';
 import kenwheeler from './ken_wheeler.png';
 import { webSocket } from 'rxjs/webSocket';
@@ -33,6 +32,8 @@ export default class HomeScreen extends React.Component {
   
   _subscription = new Subscription();
 
+  _donutMap = new Map();
+
   componentDidMount() {
     this._subscription.add(this._touchStart.pipe(
       exhaustMap(start => {
@@ -51,25 +52,38 @@ export default class HomeScreen extends React.Component {
       })
     ).subscribe((state) => {
       this.setState(state);
-      this._socket.next({
-        type: 'UPDATE_POSITION',
-        x: state.pageX,
-        y: state.pageY,
-      })
     }));
 
-    this._subscription.add(this._socket.subscribe(randomDonuts => {
-      if (!images) {
-        images = randomDonuts.map(() => sourceImages[Math.floor(Math.random() * sourceImages.length)]);
-      }
-      this.setState({
-        randomDonuts
+    this._subscription.add(
+      this._socket.pipe(
+        groupBy(data => data.id),
+        mergeMap(singleDonutStream => 
+          singleDonutStream.pipe(
+            takeUntil(
+              timer(3000),
+            ),
+            finalize(() => {
+              const dataId = singleDonutStream.key;
+              this._donutMap.delete(dataId);
+            })
+          )
+        )
+      )
+      .subscribe(data => {
+        this._donutMap.set(data.id, data);
+        this.setState({ randomDonuts: Array.from(this._donutMap.values) });
       })
-    }));
+    );
   }
 
   componentWillUnmount() {
     this._subscription.unsubscribe();
+  }
+
+  _sendDonutStream() {
+    this._socket.next(JSON.stringify({
+      type: 'sub'
+    }));
   }
 
   render() {
@@ -106,6 +120,10 @@ export default class HomeScreen extends React.Component {
             top: donutY,
           }} source={donut}>
         </Image>
+        <Button 
+          onPress={() => this._sendDonutStream()}
+          title="add"
+          ></Button>
       </HomeView>
     );
   }
