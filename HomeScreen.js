@@ -2,14 +2,13 @@ import React from 'react';
 import { Button, Text, Image } from 'react-native';
 import styled from 'styled-components';
 import { Subject, timer } from 'rxjs';
-import { exhaustMap, map, takeUntil, groupBy, mergeMap, finalize, single  } from 'rxjs/operators';
+import { exhaustMap, map, takeUntil, groupBy, mergeMap, finalize } from 'rxjs/operators';
 import donut from './donut.png';
 import kenwheeler from './ken_wheeler.png';
 import { webSocket } from 'rxjs/webSocket';
 import { Subscription } from 'rxjs';
 
 const sourceImages = [kenwheeler, donut];
-let images = null;
 
 /* <Button 
           title="👀 🦄 🌈 (👆 me)"
@@ -71,7 +70,7 @@ export default class HomeScreen extends React.Component {
       )
       .subscribe(data => {
         this._donutMap.set(data.id, data);
-        this.setState({ randomDonuts: Array.from(this._donutMap.values) });
+        this.setState({ randomDonuts: Array.from(this._donutMap.values()) });
       })
     );
   }
@@ -100,7 +99,7 @@ export default class HomeScreen extends React.Component {
         {/* <Text>{ JSON.stringify({ pageX, pageY, locationX, locationY, randomDonutX, randomDonutY }) }</Text> */}
         {this.state.randomDonuts.map((randomDonut, i) => <Image 
           key={i}
-          source={images[i]}
+          source={sourceImages[0]}
           style={{
             position: 'absolute',
             left: randomDonut.x,
